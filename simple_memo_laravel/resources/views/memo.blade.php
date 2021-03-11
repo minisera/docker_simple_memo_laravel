@@ -10,7 +10,7 @@
                 </div>
                 <div class="pr-1">
                     <a href="{{route('memo.add')}}" class="btn btn-success"><i class="fas fa-plus"></i></a>
-                    <a href="{{ route('login.index') }}" class="btn btn-dark"><i class="fas fa-sign-out-alt"></i></a>
+                    <a href="{{ route('memo.logout') }}" class="btn btn-dark"><i class="fas fa-sign-out-alt"></i></a>
                 </div>
             </div>
             <div class="left-memo-title h3 pl-3 pt-3">
@@ -41,7 +41,7 @@
                 @csrf
                 <input type="hidden" name="edit_id" value="{{ $select_memo->id }}" />
                 <div id="memo-menu">
-                    <button type="submit" class="btn btn-danger" formaction=""><i class="fas fa-trash-alt"></i></button>
+                    <button type="submit" class="btn btn-danger" formaction="{{route('memo.delete')}}"><i class="fas fa-trash-alt"></i></button>
                     <button type="submit" class="btn btn-success" formaction="{{route('memo.update')}}"><i class="fas fa-save"></i></button>
                 </div>
                 <input type="text" id="memo-title" name="edit_title" placeholder="タイトルを入力する..." value="{{ $select_memo->title }}" />
